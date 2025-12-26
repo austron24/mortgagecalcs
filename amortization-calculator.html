@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amortization Calculator - Loan Payment Schedule | MortgageCalcs</title>
+    <meta name="description" content="Free amortization calculator. Generate a complete loan amortization schedule showing principal, interest, and balance for each payment.">
+    <meta name="keywords" content="amortization calculator, loan schedule, mortgage amortization, loan payment breakdown, principal interest">
+    <link rel="canonical" href="https://mortgagecalcs.xyz/amortization-calculator.html">
+    <style>
+        :root { --primary: #0ea5e9; --primary-dark: #0284c7; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .schedule-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
+        .schedule-table th { background: var(--bg-dark); padding: 12px 8px; text-align: left; position: sticky; top: 0; }
+        .schedule-table td { padding: 10px 8px; border-bottom: 1px solid var(--border); }
+        .schedule-table tr:hover { background: var(--bg-input); }
+        .table-container { max-height: 400px; overflow-y: auto; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>📊 Amortization Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📋 Loan Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Loan Amount ($)</label>
+                        <input type="number" id="principal" value="250000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="rate" value="6.5" step="0.125" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Loan Term</label>
+                        <select id="term" onchange="calculate()">
+                            <option value="180">15 Years</option>
+                            <option value="240">20 Years</option>
+                            <option value="360" selected>30 Years</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Extra Monthly Payment ($)</label>
+                        <input type="number" id="extra" value="0" oninput="calculate()">
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Monthly Payment</div>
+                    <div class="result-hero-value" id="monthlyPayment">$0</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="totalPaid">$0</div>
+                        <div class="result-label">Total Paid</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="totalInterest">$0</div>
+                        <div class="result-label">Total Interest</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="payoffDate">--</div>
+                        <div class="result-label">Payoff Date</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="interestSaved">$0</div>
+                        <div class="result-label">Interest Saved</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📅 Amortization Schedule</h2>
+                <div class="table-container">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Payment</th>
+                                <th>Principal</th>
+                                <th>Interest</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheduleBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="mortgage-calculator.html" class="related-link">🏠 Mortgage</a>
+                    <a href="loan-calculator.html" class="related-link">📋 Loan</a>
+                    <a href="refinance-calculator.html" class="related-link">🔄 Refinance</a>
+                    <a href="auto-loan-calculator.html" class="related-link">🚗 Auto Loan</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const principal = parseFloat(document.getElementById('principal').value) || 0;
+            const annualRate = parseFloat(document.getElementById('rate').value) / 100 || 0;
+            const term = parseInt(document.getElementById('term').value);
+            const extra = parseFloat(document.getElementById('extra').value) || 0;
+
+            const monthlyRate = annualRate / 12;
+            let basePayment;
+            if (monthlyRate > 0) {
+                basePayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
+            } else {
+                basePayment = principal / term;
+            }
+
+            const totalPayment = basePayment + extra;
+            let balance = principal;
+            let totalInterest = 0;
+            let totalPaid = 0;
+            let months = 0;
+            let scheduleHtml = '';
+
+            while (balance > 0.01 && months < 600) {
+                months++;
+                const interestPayment = balance * monthlyRate;
+                let principalPayment = Math.min(basePayment - interestPayment + extra, balance);
+                const payment = interestPayment + principalPayment;
+                
+                balance -= principalPayment;
+                totalInterest += interestPayment;
+                totalPaid += payment;
+
+                if (months <= 360) {
+                    scheduleHtml += '<tr><td>' + months + '</td><td>$' + payment.toFixed(2) + '</td><td>$' + principalPayment.toFixed(2) + '</td><td>$' + interestPayment.toFixed(2) + '</td><td>$' + Math.max(0, balance).toFixed(2) + '</td></tr>';
+                }
+            }
+
+            let baseInterest = 0;
+            let baseBalance = principal;
+            for (let i = 0; i < term; i++) {
+                const interest = baseBalance * monthlyRate;
+                baseInterest += interest;
+                baseBalance -= (basePayment - interest);
+            }
+            const interestSaved = extra > 0 ? baseInterest - totalInterest : 0;
+
+            const payoffDate = new Date();
+            payoffDate.setMonth(payoffDate.getMonth() + months);
+
+            document.getElementById('monthlyPayment').textContent = '$' + totalPayment.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('totalPaid').textContent = '$' + Math.round(totalPaid).toLocaleString();
+            document.getElementById('totalInterest').textContent = '$' + Math.round(totalInterest).toLocaleString();
+            document.getElementById('payoffDate').textContent = payoffDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            document.getElementById('interestSaved').textContent = '$' + Math.round(interestSaved).toLocaleString();
+            document.getElementById('scheduleBody').innerHTML = scheduleHtml;
+        }
+        calculate();
+    </script>
+</body>
+</html>

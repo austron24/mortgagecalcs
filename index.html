@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MortgageCalcs - Free Mortgage & Real Estate Calculators</title>
+    <meta name="description" content="Free online mortgage calculators, home loan tools, and real estate calculators. Calculate mortgage payments, refinance savings, and more.">
+    <link rel="canonical" href="https://mortgagecalcs.xyz/">
+    <meta property="og:title" content="MortgageCalcs - Free Mortgage & Real Estate Calculators">
+    <meta property="og:description" content="Free online mortgage calculators, home loan tools, and real estate calculators. Calculate mortgage payments, refinance savings, and more.">
+    <meta property="og:url" content="https://mortgagecalcs.xyz/">
+    <meta property="og:type" content="website">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .header {
+            background: rgba(0,0,0,0.3);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #2563eb, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .search-box {
+            max-width: 500px;
+            margin: 2rem auto;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            outline: none;
+        }
+        .search-box input:focus {
+            border-color: #2563eb;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .tool-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.2s;
+        }
+        .tool-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #2563eb;
+            transform: translateY(-2px);
+        }
+        .tool-icon {
+            font-size: 1.5rem;
+        }
+        .tool-name {
+            font-weight: 500;
+        }
+        .stats {
+            text-align: center;
+            padding: 2rem;
+            color: #94a3b8;
+        }
+        .ad-banner {
+            text-align: center;
+            padding: 1rem;
+            margin: 1rem auto;
+            max-width: 728px;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #64748b;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">MortgageCalcs</a>
+        <span>70 Free Calculators</span>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-banner">
+        <script async="async" data-cfasync="false" src="https://www.highperformanceformat.com/ee368c7cdf94f06bc71fdf57fe4124b8/invoke.js"></script>
+        <div id="container-ee368c7cdf94f06bc71fdf57fe4124b8"></div>
+    </div>
+
+    <section class="hero">
+        <h1>Free Mortgage & Real Estate Calculators</h1>
+        <p>Free online mortgage calculators, home loan tools, and real estate calculators. Calculate mortgage payments, refinance savings, and more.</p>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search 70 calculators..." onkeyup="filterTools()">
+        </div>
+    </section>
+
+    <div class="stats">
+        <strong>70</strong> free calculators • No signup required • 100% free
+    </div>
+
+    <main class="tools-grid" id="tools-grid">
+        
+            <a href="airbnb-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Airbnb Calculator</span>
+            </a>
+            <a href="amortization-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Amortization Calculator</span>
+            </a>
+            <a href="amortization-schedule-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Amortization Schedule Calculator</span>
+            </a>
+            <a href="arm-mortgage-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Arm Mortgage Calculator</span>
+            </a>
+            <a href="atv-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Atv Loan Calculator</span>
+            </a>
+            <a href="auto-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Auto Loan Calculator</span>
+            </a>
+            <a href="auto-loan-payment-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Auto Loan Payment Calculator</span>
+            </a>
+            <a href="balloon-mortgage-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Balloon Mortgage Calculator</span>
+            </a>
+            <a href="bi-weekly-mortgage-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Bi Weekly Mortgage Calculator</span>
+            </a>
+            <a href="biweekly-mortgage-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Biweekly Mortgage Calculator</span>
+            </a>
+            <a href="boat-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Boat Loan Calculator</span>
+            </a>
+            <a href="bridge-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Bridge Loan Calculator</span>
+            </a>
+            <a href="business-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Business Loan Calculator</span>
+            </a>
+            <a href="cap-rate-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Cap Rate Calculator</span>
+            </a>
+            <a href="car-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Car Loan Calculator</span>
+            </a>
+            <a href="closing-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Closing Cost Calculator</span>
+            </a>
+            <a href="commercial-property-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Commercial Property Calculator</span>
+            </a>
+            <a href="commercial-rent-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Commercial Rent Calculator</span>
+            </a>
+            <a href="construction-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Construction Loan Calculator</span>
+            </a>
+            <a href="down-payment-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Down Payment Calculator</span>
+            </a>
+            <a href="dti-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Dti Calculator</span>
+            </a>
+            <a href="earnest-money-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Earnest Money Calculator</span>
+            </a>
+            <a href="escrow-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Escrow Calculator</span>
+            </a>
+            <a href="extra-payment-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Extra Payment Calculator</span>
+            </a>
+            <a href="fha-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Fha Loan Calculator</span>
+            </a>
+            <a href="flip-profit-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Flip Profit Calculator</span>
+            </a>
+            <a href="heloc-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Heloc Calculator</span>
+            </a>
+            <a href="heloc-payment-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Heloc Payment Calculator</span>
+            </a>
+            <a href="home-affordability-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Affordability Calculator</span>
+            </a>
+            <a href="home-appraisal-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Appraisal Calculator</span>
+            </a>
+            <a href="home-equity-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Equity Calculator</span>
+            </a>
+            <a href="home-equity-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Equity Loan Calculator</span>
+            </a>
+            <a href="home-inspection-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Inspection Cost Calculator</span>
+            </a>
+            <a href="home-insurance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Insurance Calculator</span>
+            </a>
+            <a href="home-renovation-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Renovation Calculator</span>
+            </a>
+            <a href="home-selling-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Selling Calculator</span>
+            </a>
+            <a href="home-value-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Value Calculator</span>
+            </a>
+            <a href="home-warranty-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Warranty Calculator</span>
+            </a>
+            <a href="house-affordability-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">House Affordability Calculator</span>
+            </a>
+            <a href="interest-only-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Interest Only Calculator</span>
+            </a>
+            <a href="jumbo-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Jumbo Loan Calculator</span>
+            </a>
+            <a href="land-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Land Loan Calculator</span>
+            </a>
+            <a href="land-value-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Land Value Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Loan Calculator</span>
+            </a>
+            <a href="loan-comparison-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Loan Comparison Calculator</span>
+            </a>
+            <a href="manufactured-home-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Manufactured Home Loan Calculator</span>
+            </a>
+            <a href="mortgage-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Mortgage Calculator</span>
+            </a>
+            <a href="mortgage-payoff-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Mortgage Payoff Calculator</span>
+            </a>
+            <a href="mortgage-points-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Mortgage Points Calculator</span>
+            </a>
+            <a href="mortgage-recast-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Mortgage Recast Calculator</span>
+            </a>
+            <a href="mortgage-refinance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Mortgage Refinance Calculator</span>
+            </a>
+            <a href="motorcycle-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Motorcycle Loan Calculator</span>
+            </a>
+            <a href="personal-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Personal Loan Calculator</span>
+            </a>
+            <a href="pmi-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pmi Calculator</span>
+            </a>
+            <a href="property-tax-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Property Tax Calculator</span>
+            </a>
+            <a href="refinance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Refinance Calculator</span>
+            </a>
+            <a href="refinance-savings-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Refinance Savings Calculator</span>
+            </a>
+            <a href="renovation-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Renovation Loan Calculator</span>
+            </a>
+            <a href="rent-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Rent Calculator</span>
+            </a>
+            <a href="rent-to-own-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Rent To Own Calculator</span>
+            </a>
+            <a href="rent-vs-buy-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Rent Vs Buy Calculator</span>
+            </a>
+            <a href="rental-property-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Rental Property Calculator</span>
+            </a>
+            <a href="rental-yield-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Rental Yield Calculator</span>
+            </a>
+            <a href="reverse-mortgage-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Reverse Mortgage Calculator</span>
+            </a>
+            <a href="rv-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Rv Loan Calculator</span>
+            </a>
+            <a href="sba-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Sba Loan Calculator</span>
+            </a>
+            <a href="student-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Student Loan Calculator</span>
+            </a>
+            <a href="title-insurance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Title Insurance Calculator</span>
+            </a>
+            <a href="usda-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Usda Loan Calculator</span>
+            </a>
+            <a href="va-loan-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Va Loan Calculator</span>
+            </a>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-banner">
+        <script async="async" data-cfasync="false" src="https://www.highperformanceformat.com/b43e7cf5057864a264961884e1f34530/invoke.js"></script>
+        <div id="container-b43e7cf5057864a264961884e1f34530"></div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 MortgageCalcs. All calculators are free to use.</p>
+    </footer>
+
+    <script>
+        function filterTools() {
+            const search = document.getElementById('search').value.toLowerCase();
+            const cards = document.querySelectorAll('.tool-card');
+            cards.forEach(card => {
+                const name = card.querySelector('.tool-name').textContent.toLowerCase();
+                card.style.display = name.includes(search) ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

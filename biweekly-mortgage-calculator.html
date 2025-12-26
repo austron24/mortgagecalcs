@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biweekly Mortgage Calculator - Pay Off Your Mortgage Faster | MortgageCalcs</title>
+    <meta name="description" content="Free biweekly mortgage calculator. See how much you can save and how many years you can cut off your mortgage by switching to biweekly payments.">
+    <meta name="keywords" content="biweekly mortgage calculator, mortgage payoff, biweekly payments, save on mortgage interest">
+    <link rel="canonical" href="https://mortgagecalcs.xyz/biweekly-mortgage-calculator.html">
+    <style>
+        :root { --primary: #0d9488; --primary-dark: #0f766e; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .comparison-table th, .comparison-table td { padding: 15px; text-align: center; border-bottom: 1px solid var(--border); }
+        .comparison-table th { background: var(--bg-input); color: var(--secondary); }
+        .comparison-table tr:nth-child(even) { background: rgba(0,0,0,0.1); }
+        .savings-highlight { background: var(--success); color: white; padding: 3px 10px; border-radius: 20px; font-weight: bold; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>📅 Biweekly Mortgage Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📋 Mortgage Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Loan Amount ($)</label>
+                        <input type="number" id="amount" value="300000" step="5000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="rate" value="6.5" step="0.125" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Loan Term (years)</label>
+                        <input type="number" id="term" value="30" step="5" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Extra Payment per Biweekly ($)</label>
+                        <input type="number" id="extra" value="0" step="50" oninput="calculate()">
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Total Interest Saved</div>
+                    <div class="result-hero-value" id="interestSaved">$0</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="yearsSaved">0</div>
+                        <div class="result-label">Years Saved</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="biweeklyPayment">$0</div>
+                        <div class="result-label">Biweekly Payment</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="monthlyPayment">$0</div>
+                        <div class="result-label">Monthly Payment</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="effectiveMonthly">$0</div>
+                        <div class="result-label">Effective Monthly (26 payments/yr)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Payment Comparison</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Monthly</th>
+                            <th>Biweekly</th>
+                            <th>Savings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Payment</td>
+                            <td id="monthlyComp">$0</td>
+                            <td id="biweeklyComp">$0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Total Payments</td>
+                            <td id="monthlyPayments">360</td>
+                            <td id="biweeklyPayments">0</td>
+                            <td id="paymentsSaved" class="savings-highlight">0</td>
+                        </tr>
+                        <tr>
+                            <td>Total Interest</td>
+                            <td id="monthlyInterest">$0</td>
+                            <td id="biweeklyInterest">$0</td>
+                            <td id="interestSavedComp" class="savings-highlight">$0</td>
+                        </tr>
+                        <tr>
+                            <td>Payoff Time</td>
+                            <td id="monthlyTime">30 years</td>
+                            <td id="biweeklyTime">0 years</td>
+                            <td id="timeSaved" class="savings-highlight">0 years</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="mortgage-calculator.html" class="related-link">🏡 Mortgage Calculator</a>
+                    <a href="amortization-schedule-calculator.html" class="related-link">📅 Amortization</a>
+                    <a href="mortgage-refinance-calculator.html" class="related-link">🔄 Refinance</a>
+                    <a href="extra-payment-calculator.html" class="related-link">💰 Extra Payments</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const amount = parseFloat(document.getElementById('amount').value) || 0;
+            const rate = parseFloat(document.getElementById('rate').value) || 0;
+            const term = parseInt(document.getElementById('term').value) * 12;
+            const extra = parseFloat(document.getElementById('extra').value) || 0;
+
+            const monthlyRate = rate / 100 / 12;
+            const biweeklyRate = rate / 100 / 26;
+
+            // Monthly payment calculation
+            let monthlyPayment;
+            if (monthlyRate === 0) {
+                monthlyPayment = amount / term;
+            } else {
+                monthlyPayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
+            }
+
+            // Biweekly payment is half of monthly
+            const biweeklyPayment = (monthlyPayment / 2) + extra;
+
+            // Calculate monthly scenario
+            const totalMonthlyPayments = term;
+            const totalMonthlyPaid = monthlyPayment * term;
+            const totalMonthlyInterest = totalMonthlyPaid - amount;
+
+            // Calculate biweekly scenario
+            let biweeklyBalance = amount;
+            let biweeklyPaymentsCount = 0;
+            let totalBiweeklyInterest = 0;
+
+            while (biweeklyBalance > 0 && biweeklyPaymentsCount < term * 2.5) {
+                const interest = biweeklyBalance * biweeklyRate;
+                totalBiweeklyInterest += interest;
+                const principal = Math.min(biweeklyPayment - interest, biweeklyBalance);
+                biweeklyBalance -= principal;
+                biweeklyPaymentsCount++;
+            }
+
+            const biweeklyYears = biweeklyPaymentsCount / 26;
+            const monthlyYears = term / 12;
+            const yearsSaved = monthlyYears - biweeklyYears;
+            const interestSaved = totalMonthlyInterest - totalBiweeklyInterest;
+
+            // Effective monthly (what you actually pay per month with 26 biweekly payments)
+            const effectiveMonthly = (biweeklyPayment * 26) / 12;
+
+            // Update display
+            document.getElementById('interestSaved').textContent = '$' + Math.round(interestSaved).toLocaleString();
+            document.getElementById('yearsSaved').textContent = yearsSaved.toFixed(1) + ' years';
+            document.getElementById('biweeklyPayment').textContent = '$' + Math.round(biweeklyPayment).toLocaleString();
+            document.getElementById('monthlyPayment').textContent = '$' + Math.round(monthlyPayment).toLocaleString();
+            document.getElementById('effectiveMonthly').textContent = '$' + Math.round(effectiveMonthly).toLocaleString();
+
+            // Comparison table
+            document.getElementById('monthlyComp').textContent = '$' + Math.round(monthlyPayment).toLocaleString();
+            document.getElementById('biweeklyComp').textContent = '$' + Math.round(biweeklyPayment).toLocaleString();
+            document.getElementById('monthlyPayments').textContent = totalMonthlyPayments;
+            document.getElementById('biweeklyPayments').textContent = biweeklyPaymentsCount;
+            document.getElementById('paymentsSaved').textContent = (totalMonthlyPayments - Math.round(biweeklyPaymentsCount / 2));
+            document.getElementById('monthlyInterest').textContent = '$' + Math.round(totalMonthlyInterest).toLocaleString();
+            document.getElementById('biweeklyInterest').textContent = '$' + Math.round(totalBiweeklyInterest).toLocaleString();
+            document.getElementById('interestSavedComp').textContent = '$' + Math.round(interestSaved).toLocaleString();
+            document.getElementById('monthlyTime').textContent = monthlyYears.toFixed(1) + ' years';
+            document.getElementById('biweeklyTime').textContent = biweeklyYears.toFixed(1) + ' years';
+            document.getElementById('timeSaved').textContent = yearsSaved.toFixed(1) + ' years';
+        }
+        calculate();
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Payoff Calculator - Pay Off Your Mortgage Early | MortgageCalcs</title>
+    <meta name="description" content="Free mortgage payoff calculator. See how extra payments can help you pay off your mortgage early and save on interest. Calculate payoff date and savings.">
+    <meta name="keywords" content="mortgage payoff calculator, pay off mortgage early, extra mortgage payment, mortgage savings, early payoff">
+    <link rel="canonical" href="https://mortgagecalcs.xyz/mortgage-payoff-calculator.html">
+    <style>
+        :root { --primary: #059669; --primary-dark: #047857; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.9); font-size: 1.2rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .comparison-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px; }
+        .comparison-card { background: var(--bg-input); padding: 20px; border-radius: 12px; }
+        .comparison-card h3 { color: var(--accent); margin-bottom: 15px; text-align: center; }
+        .comparison-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); }
+        .comparison-row:last-child { border-bottom: none; }
+        .highlight { color: var(--success); font-weight: bold; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid, .comparison-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🏠 Mortgage Payoff Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📊 Current Mortgage</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Remaining Balance ($)</label>
+                        <input type="number" id="balance" value="300000" step="1000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="rate" value="6.5" step="0.125" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Remaining Term (years)</label>
+                        <input type="number" id="term" value="25" step="1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Current Monthly Payment ($)</label>
+                        <input type="number" id="payment" value="0" step="50" oninput="calculate()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💰 Extra Payments</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Extra Monthly Payment ($)</label>
+                        <input type="number" id="extraMonthly" value="200" step="50" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>One-Time Payment ($)</label>
+                        <input type="number" id="oneTime" value="0" step="1000" oninput="calculate()">
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Total Interest Saved</div>
+                    <div class="result-hero-value" id="interestSaved">$0</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="yearsOff">0</div>
+                        <div class="result-label">Years Paid Off Early</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="newPayoffDate">--</div>
+                        <div class="result-label">New Payoff Date</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="monthsSaved">0</div>
+                        <div class="result-label">Months Saved</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>📍 Without Extra Payments</h3>
+                    <div class="comparison-row"><span>Monthly Payment</span><span id="origPayment">$0</span></div>
+                    <div class="comparison-row"><span>Total Payments</span><span id="origMonths">0</span></div>
+                    <div class="comparison-row"><span>Total Interest</span><span id="origInterest">$0</span></div>
+                    <div class="comparison-row"><span>Total Cost</span><span id="origTotal">$0</span></div>
+                    <div class="comparison-row"><span>Payoff Date</span><span id="origPayoff">--</span></div>
+                </div>
+                <div class="comparison-card">
+                    <h3>✨ With Extra Payments</h3>
+                    <div class="comparison-row"><span>Monthly Payment</span><span id="newPayment" class="highlight">$0</span></div>
+                    <div class="comparison-row"><span>Total Payments</span><span id="newMonths" class="highlight">0</span></div>
+                    <div class="comparison-row"><span>Total Interest</span><span id="newInterest" class="highlight">$0</span></div>
+                    <div class="comparison-row"><span>Total Cost</span><span id="newTotal" class="highlight">$0</span></div>
+                    <div class="comparison-row"><span>Payoff Date</span><span id="newPayoff" class="highlight">--</span></div>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="mortgage-calculator.html" class="related-link">🏠 Mortgage Calculator</a>
+                    <a href="extra-payment-calculator.html" class="related-link">💵 Extra Payment</a>
+                    <a href="mortgage-refinance-calculator.html" class="related-link">🔄 Refinance</a>
+                    <a href="amortization-calculator.html" class="related-link">📊 Amortization</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calcPayment(principal, rate, months) {
+            const monthlyRate = rate / 100 / 12;
+            return principal * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+        }
+
+        function calcPayoff(balance, rate, payment, extraMonthly, oneTime) {
+            let remaining = balance - oneTime;
+            const monthlyRate = rate / 100 / 12;
+            let months = 0;
+            let totalInterest = 0;
+            const totalPayment = payment + extraMonthly;
+            
+            while (remaining > 0 && months < 600) {
+                const interest = remaining * monthlyRate;
+                totalInterest += interest;
+                const principal = Math.min(totalPayment - interest, remaining);
+                remaining -= principal;
+                months++;
+            }
+            
+            return { months, totalInterest };
+        }
+
+        function calculate() {
+            const balance = parseFloat(document.getElementById('balance').value) || 0;
+            const rate = parseFloat(document.getElementById('rate').value) || 0;
+            const term = parseInt(document.getElementById('term').value) || 25;
+            let payment = parseFloat(document.getElementById('payment').value) || 0;
+            const extraMonthly = parseFloat(document.getElementById('extraMonthly').value) || 0;
+            const oneTime = parseFloat(document.getElementById('oneTime').value) || 0;
+            
+            const origMonths = term * 12;
+            
+            // Calculate payment if not provided
+            if (payment === 0) {
+                payment = calcPayment(balance, rate, origMonths);
+                document.getElementById('payment').value = Math.round(payment);
+            }
+            
+            // Original scenario
+            const origResult = calcPayoff(balance, rate, payment, 0, 0);
+            const origInterest = origResult.totalInterest;
+            const origTotal = balance + origInterest;
+            
+            // With extra payments
+            const newResult = calcPayoff(balance, rate, payment, extraMonthly, oneTime);
+            const newInterest = newResult.totalInterest;
+            const newMonths = newResult.months;
+            const newTotal = balance + newInterest;
+            
+            const interestSaved = origInterest - newInterest;
+            const monthsSaved = origMonths - newMonths;
+            const yearsOff = monthsSaved / 12;
+            
+            // Dates
+            const now = new Date();
+            const origPayoffDate = new Date(now.getFullYear(), now.getMonth() + origMonths);
+            const newPayoffDate = new Date(now.getFullYear(), now.getMonth() + newMonths);
+            
+            const formatDate = (d) => d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            
+            document.getElementById('interestSaved').textContent = '$' + Math.round(interestSaved).toLocaleString();
+            document.getElementById('yearsOff').textContent = yearsOff.toFixed(1);
+            document.getElementById('monthsSaved').textContent = monthsSaved;
+            document.getElementById('newPayoffDate').textContent = formatDate(newPayoffDate);
+            
+            document.getElementById('origPayment').textContent = '$' + Math.round(payment).toLocaleString();
+            document.getElementById('origMonths').textContent = origMonths;
+            document.getElementById('origInterest').textContent = '$' + Math.round(origInterest).toLocaleString();
+            document.getElementById('origTotal').textContent = '$' + Math.round(origTotal).toLocaleString();
+            document.getElementById('origPayoff').textContent = formatDate(origPayoffDate);
+            
+            document.getElementById('newPayment').textContent = '$' + Math.round(payment + extraMonthly).toLocaleString();
+            document.getElementById('newMonths').textContent = newMonths;
+            document.getElementById('newInterest').textContent = '$' + Math.round(newInterest).toLocaleString();
+            document.getElementById('newTotal').textContent = '$' + Math.round(newTotal).toLocaleString();
+            document.getElementById('newPayoff').textContent = formatDate(newPayoffDate);
+        }
+        
+        calculate();
+    </script>
+</body>
+</html>

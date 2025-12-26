@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Property Calculator - Investment Analysis | MortgageCalcs</title>
+    <meta name="description" content="Free rental property calculator. Analyze cash flow, cap rate, ROI, and cash-on-cash return for real estate investments.">
+    <meta name="keywords" content="rental property calculator, investment property, cash flow analysis, cap rate, ROI real estate">
+    <link rel="canonical" href="https://mortgagecalcs.xyz/rental-property-calculator.html">
+    <style>
+        :root { --primary: #059669; --primary-dark: #047857; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; --danger: #dc2626; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-value.positive { color: var(--success); }
+        .result-value.negative { color: var(--danger); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🏘️ Rental Property Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>🏠 Property Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Purchase Price ($)</label>
+                        <input type="number" id="price" value="350000" step="5000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Down Payment ($)</label>
+                        <input type="number" id="downPayment" value="70000" step="5000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="rate" value="7.0" step="0.125" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Loan Term (years)</label>
+                        <input type="number" id="term" value="30" step="5" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Closing Costs ($)</label>
+                        <input type="number" id="closing" value="8000" step="500" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Rehab/Repair Costs ($)</label>
+                        <input type="number" id="rehab" value="5000" step="1000" oninput="calculate()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💰 Income & Expenses</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Monthly Rent ($)</label>
+                        <input type="number" id="rent" value="2400" step="50" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Other Monthly Income ($)</label>
+                        <input type="number" id="otherIncome" value="0" step="25" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Property Tax (yearly $)</label>
+                        <input type="number" id="tax" value="4200" step="100" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Insurance (yearly $)</label>
+                        <input type="number" id="insurance" value="1800" step="100" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Vacancy Rate (%)</label>
+                        <input type="number" id="vacancy" value="5" step="1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Property Management (%)</label>
+                        <input type="number" id="management" value="8" step="1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Maintenance (yearly $)</label>
+                        <input type="number" id="maintenance" value="2500" step="100" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>HOA (monthly $)</label>
+                        <input type="number" id="hoa" value="0" step="25" oninput="calculate()">
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Monthly Cash Flow</div>
+                    <div class="result-hero-value" id="cashFlow">$0</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="capRate">0%</div>
+                        <div class="result-label">Cap Rate</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="coc">0%</div>
+                        <div class="result-label">Cash-on-Cash ROI</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="totalInvestment">$0</div>
+                        <div class="result-label">Total Investment</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="annualCashFlow">$0</div>
+                        <div class="result-label">Annual Cash Flow</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Monthly Breakdown</h2>
+                <div class="breakdown-row"><span>Gross Rental Income</span><span id="grossIncome">$0</span></div>
+                <div class="breakdown-row"><span>Less: Vacancy</span><span id="vacancyLoss">-$0</span></div>
+                <div class="breakdown-row"><span>Effective Gross Income</span><span id="effectiveIncome">$0</span></div>
+                <div class="breakdown-row"><span>Mortgage Payment (P&I)</span><span id="mortgage">-$0</span></div>
+                <div class="breakdown-row"><span>Property Tax</span><span id="monthlyTax">-$0</span></div>
+                <div class="breakdown-row"><span>Insurance</span><span id="monthlyInsurance">-$0</span></div>
+                <div class="breakdown-row"><span>Property Management</span><span id="monthlyManagement">-$0</span></div>
+                <div class="breakdown-row"><span>Maintenance Reserve</span><span id="monthlyMaintenance">-$0</span></div>
+                <div class="breakdown-row"><span>HOA</span><span id="monthlyHOA">-$0</span></div>
+                <div class="breakdown-row" style="font-weight: bold; background: var(--primary);"><span>Net Cash Flow</span><span id="netCashFlow">$0</span></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="mortgage-calculator.html" class="related-link">🏡 Mortgage Calculator</a>
+                    <a href="rent-vs-buy-calculator.html" class="related-link">🏠 Rent vs Buy</a>
+                    <a href="roi-calculator.html" class="related-link">📈 ROI Calculator</a>
+                    <a href="home-value-calculator.html" class="related-link">💰 Home Value</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const price = parseFloat(document.getElementById('price').value) || 0;
+            const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+            const rate = parseFloat(document.getElementById('rate').value) || 0;
+            const termYears = parseInt(document.getElementById('term').value) || 30;
+            const closing = parseFloat(document.getElementById('closing').value) || 0;
+            const rehab = parseFloat(document.getElementById('rehab').value) || 0;
+            const rent = parseFloat(document.getElementById('rent').value) || 0;
+            const otherIncome = parseFloat(document.getElementById('otherIncome').value) || 0;
+            const tax = parseFloat(document.getElementById('tax').value) || 0;
+            const insurance = parseFloat(document.getElementById('insurance').value) || 0;
+            const vacancy = parseFloat(document.getElementById('vacancy').value) || 0;
+            const management = parseFloat(document.getElementById('management').value) || 0;
+            const maintenance = parseFloat(document.getElementById('maintenance').value) || 0;
+            const hoa = parseFloat(document.getElementById('hoa').value) || 0;
+
+            const loanAmount = price - downPayment;
+            const term = termYears * 12;
+            const monthlyRate = rate / 100 / 12;
+
+            // Calculate mortgage payment
+            let mortgagePayment;
+            if (monthlyRate === 0) {
+                mortgagePayment = loanAmount / term;
+            } else {
+                mortgagePayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
+            }
+
+            // Monthly calculations
+            const grossIncome = rent + otherIncome;
+            const vacancyLoss = grossIncome * (vacancy / 100);
+            const effectiveIncome = grossIncome - vacancyLoss;
+            const monthlyTax = tax / 12;
+            const monthlyInsurance = insurance / 12;
+            const monthlyManagement = effectiveIncome * (management / 100);
+            const monthlyMaintenance = maintenance / 12;
+
+            const totalExpenses = mortgagePayment + monthlyTax + monthlyInsurance + monthlyManagement + monthlyMaintenance + hoa;
+            const cashFlow = effectiveIncome - totalExpenses;
+            const annualCashFlow = cashFlow * 12;
+
+            // Investment calculations
+            const totalInvestment = downPayment + closing + rehab;
+            const annualNOI = (effectiveIncome * 12) - tax - insurance - (monthlyManagement * 12) - maintenance - (hoa * 12);
+            const capRate = price > 0 ? (annualNOI / price) * 100 : 0;
+            const coc = totalInvestment > 0 ? (annualCashFlow / totalInvestment) * 100 : 0;
+
+            // Update displays
+            document.getElementById('cashFlow').textContent = '$' + Math.round(cashFlow).toLocaleString();
+            document.getElementById('cashFlow').style.color = cashFlow >= 0 ? '#10b981' : '#dc2626';
+            
+            document.getElementById('capRate').textContent = capRate.toFixed(2) + '%';
+            document.getElementById('capRate').className = 'result-value' + (capRate >= 6 ? ' positive' : capRate >= 4 ? '' : ' negative');
+            
+            document.getElementById('coc').textContent = coc.toFixed(2) + '%';
+            document.getElementById('coc').className = 'result-value' + (coc >= 8 ? ' positive' : coc >= 5 ? '' : ' negative');
+            
+            document.getElementById('totalInvestment').textContent = '$' + Math.round(totalInvestment).toLocaleString();
+            document.getElementById('annualCashFlow').textContent = '$' + Math.round(annualCashFlow).toLocaleString();
+            document.getElementById('annualCashFlow').className = 'result-value' + (annualCashFlow >= 0 ? ' positive' : ' negative');
+
+            // Breakdown
+            document.getElementById('grossIncome').textContent = '$' + Math.round(grossIncome).toLocaleString();
+            document.getElementById('vacancyLoss').textContent = '-$' + Math.round(vacancyLoss).toLocaleString();
+            document.getElementById('effectiveIncome').textContent = '$' + Math.round(effectiveIncome).toLocaleString();
+            document.getElementById('mortgage').textContent = '-$' + Math.round(mortgagePayment).toLocaleString();
+            document.getElementById('monthlyTax').textContent = '-$' + Math.round(monthlyTax).toLocaleString();
+            document.getElementById('monthlyInsurance').textContent = '-$' + Math.round(monthlyInsurance).toLocaleString();
+            document.getElementById('monthlyManagement').textContent = '-$' + Math.round(monthlyManagement).toLocaleString();
+            document.getElementById('monthlyMaintenance').textContent = '-$' + Math.round(monthlyMaintenance).toLocaleString();
+            document.getElementById('monthlyHOA').textContent = '-$' + Math.round(hoa).toLocaleString();
+            document.getElementById('netCashFlow').textContent = '$' + Math.round(cashFlow).toLocaleString();
+        }
+        calculate();
+    </script>
+</body>
+</html>

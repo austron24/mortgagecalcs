@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Loan Calculator - Commercial Loan Payment Calculator | MortgageCalcs</title>
+    <meta name="description" content="Free business loan calculator. Calculate monthly payments, total interest, and compare business loan options for SBA, term loans, and lines of credit.">
+    <meta name="keywords" content="business loan calculator, commercial loan, SBA loan calculator, small business loan, loan payment">
+    <link rel="canonical" href="https://mortgagecalcs.xyz/business-loan-calculator.html">
+    <style>
+        :root { --primary: #10b981; --primary-dark: #059669; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 2.5rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.9); font-size: 1.2rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); }
+        .breakdown-row:last-child { border-bottom: none; }
+        .loan-types { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px; }
+        .loan-card { background: var(--bg-input); padding: 20px; border-radius: 12px; }
+        .loan-name { color: var(--secondary); font-weight: bold; margin-bottom: 10px; }
+        .loan-detail { color: var(--text-secondary); font-size: 0.85rem; margin: 5px 0; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid, .loan-types { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>Business Loan Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>Loan Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Loan Amount ($)</label>
+                        <input type="number" id="loanAmount" value="100000" min="5000" max="5000000" step="5000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="interestRate" value="8.5" min="3" max="30" step="0.1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Loan Term</label>
+                        <select id="term" onchange="calculate()">
+                            <option value="12">1 Year</option>
+                            <option value="24">2 Years</option>
+                            <option value="36">3 Years</option>
+                            <option value="60" selected>5 Years</option>
+                            <option value="84">7 Years</option>
+                            <option value="120">10 Years</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Loan Type</label>
+                        <select id="loanType" onchange="updateRate()">
+                            <option value="term" selected>Term Loan</option>
+                            <option value="sba7a">SBA 7(a) Loan</option>
+                            <option value="sba504">SBA 504 Loan</option>
+                            <option value="loc">Line of Credit</option>
+                            <option value="equipment">Equipment Loan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Origination Fee (%)</label>
+                        <input type="number" id="origFee" value="1" min="0" max="5" step="0.25" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Frequency</label>
+                        <select id="frequency" onchange="calculate()">
+                            <option value="monthly" selected>Monthly</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="daily">Daily</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-hero">
+                <div class="result-hero-label">Monthly Payment</div>
+                <div class="result-hero-value" id="monthlyPayment">$0</div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value" id="totalInterest">$0</div>
+                    <div class="result-label">Total Interest</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="totalCost">$0</div>
+                    <div class="result-label">Total Cost</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="apr">0%</div>
+                    <div class="result-label">Effective APR</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Cost Breakdown</h2>
+                <div class="breakdown-row"><span>Principal Amount</span><span id="principalAmt">$0</span></div>
+                <div class="breakdown-row"><span>Total Interest</span><span id="interestAmt">$0</span></div>
+                <div class="breakdown-row"><span>Origination Fee</span><span id="origAmt">$0</span></div>
+                <div class="breakdown-row"><span>Total Payments</span><span id="numPayments">0</span></div>
+                <div class="breakdown-row" style="font-weight: bold; color: var(--success);"><span>Total Cost of Loan</span><span id="totalCostBreak">$0</span></div>
+            </div>
+
+            <div class="card">
+                <h2>Compare Loan Types</h2>
+                <div class="loan-types" id="loanTypes"></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>Related Tools</h2>
+                <div class="related-tools">
+                    <a href="roi-calculator.html" class="related-link">ROI Calculator</a>
+                    <a href="profit-margin-calculator.html" class="related-link">Profit Margin</a>
+                    <a href="break-even-calculator.html" class="related-link">Break Even</a>
+                    <a href="personal-loan-calculator.html" class="related-link">Personal Loan</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loanInfo = {
+            term: { rate: 8.5, name: 'Bank Term Loan', desc: 'Traditional fixed-rate business loan', terms: '1-10 years' },
+            sba7a: { rate: 7.5, name: 'SBA 7(a) Loan', desc: 'Government-backed, lower rates', terms: '5-25 years' },
+            sba504: { rate: 6.5, name: 'SBA 504 Loan', desc: 'Real estate & equipment', terms: '10-25 years' },
+            loc: { rate: 10, name: 'Business Line of Credit', desc: 'Flexible revolving credit', terms: '1-5 years' },
+            equipment: { rate: 9, name: 'Equipment Financing', desc: 'Asset-backed financing', terms: '3-7 years' }
+        };
+
+        function updateRate() {
+            const loanType = document.getElementById('loanType').value;
+            document.getElementById('interestRate').value = loanInfo[loanType].rate;
+            calculate();
+        }
+
+        function calculate() {
+            const amount = parseFloat(document.getElementById('loanAmount').value) || 100000;
+            const rate = parseFloat(document.getElementById('interestRate').value) / 100;
+            const termMonths = parseInt(document.getElementById('term').value);
+            const origFee = parseFloat(document.getElementById('origFee').value) / 100;
+            const frequency = document.getElementById('frequency').value;
+
+            const origAmount = amount * origFee;
+            const monthlyRate = rate / 12;
+            
+            // Calculate payment
+            let payment, numPayments, periodRate;
+            if (frequency === 'monthly') {
+                numPayments = termMonths;
+                periodRate = monthlyRate;
+            } else if (frequency === 'weekly') {
+                numPayments = termMonths * 4.33;
+                periodRate = rate / 52;
+            } else {
+                numPayments = termMonths * 30;
+                periodRate = rate / 365;
+            }
+
+            if (periodRate > 0) {
+                payment = amount * (periodRate * Math.pow(1 + periodRate, numPayments)) / (Math.pow(1 + periodRate, numPayments) - 1);
+            } else {
+                payment = amount / numPayments;
+            }
+
+            const totalPayments = payment * numPayments;
+            const totalInterest = totalPayments - amount;
+            const totalCost = totalPayments + origAmount;
+            
+            // Effective APR considering fees
+            const effectiveAPR = ((totalInterest + origAmount) / amount) / (termMonths / 12) * 100;
+
+            const freqLabel = frequency === 'monthly' ? 'Monthly' : frequency === 'weekly' ? 'Weekly' : 'Daily';
+            document.getElementById('monthlyPayment').textContent = '$' + Math.round(payment).toLocaleString() + ' ' + freqLabel;
+            document.getElementById('totalInterest').textContent = '$' + Math.round(totalInterest).toLocaleString();
+            document.getElementById('totalCost').textContent = '$' + Math.round(totalCost).toLocaleString();
+            document.getElementById('apr').textContent = effectiveAPR.toFixed(2) + '%';
+
+            document.getElementById('principalAmt').textContent = '$' + amount.toLocaleString();
+            document.getElementById('interestAmt').textContent = '$' + Math.round(totalInterest).toLocaleString();
+            document.getElementById('origAmt').textContent = '$' + Math.round(origAmount).toLocaleString();
+            document.getElementById('numPayments').textContent = Math.round(numPayments) + ' payments';
+            document.getElementById('totalCostBreak').textContent = '$' + Math.round(totalCost).toLocaleString();
+
+            // Compare loan types
+            let compareHTML = '';
+            for (const [key, info] of Object.entries(loanInfo)) {
+                const compareRate = info.rate / 100 / 12;
+                const comparePmt = amount * (compareRate * Math.pow(1 + compareRate, termMonths)) / (Math.pow(1 + compareRate, termMonths) - 1);
+                const compareTotal = comparePmt * termMonths;
+                const compareInt = compareTotal - amount;
+                
+                compareHTML += `
+                    <div class="loan-card">
+                        <div class="loan-name">${info.name}</div>
+                        <div class="loan-detail">${info.desc}</div>
+                        <div class="loan-detail">Typical Rate: ${info.rate}%</div>
+                        <div class="loan-detail">Terms: ${info.terms}</div>
+                        <div style="margin-top: 10px; font-weight: bold; color: var(--secondary);">
+                            $${Math.round(comparePmt).toLocaleString()}/mo
+                        </div>
+                        <div class="loan-detail">Total Interest: $${Math.round(compareInt).toLocaleString()}</div>
+                    </div>
+                `;
+            }
+            document.getElementById('loanTypes').innerHTML = compareHTML;
+        }
+
+        calculate();
+    </script>
+</body>
+</html>

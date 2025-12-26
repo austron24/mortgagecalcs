@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Loan Calculator - Car Payment & Interest | MortgageCalcs</title>
+    <meta name="description" content="Free auto loan calculator. Calculate your monthly car payment, total interest, and see full amortization schedule.">
+    <meta name="keywords" content="auto loan calculator, car loan, car payment calculator, vehicle financing, car interest">
+    <link rel="canonical" href="https://mortgagecalcs.xyz/auto-loan-calculator.html">
+    <style>
+        :root { --primary: #2563eb; --primary-dark: #1d4ed8; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🚗 Auto Loan Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>💰 Loan Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Vehicle Price ($)</label>
+                        <input type="number" id="price" value="35000" step="500" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Down Payment ($)</label>
+                        <input type="number" id="down" value="5000" step="500" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Trade-In Value ($)</label>
+                        <input type="number" id="tradeIn" value="0" step="500" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="rate" value="6.5" step="0.1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Loan Term</label>
+                        <select id="term" onchange="calculate()">
+                            <option value="36">36 months (3 years)</option>
+                            <option value="48">48 months (4 years)</option>
+                            <option value="60" selected>60 months (5 years)</option>
+                            <option value="72">72 months (6 years)</option>
+                            <option value="84">84 months (7 years)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Sales Tax Rate (%)</label>
+                        <input type="number" id="tax" value="7" step="0.25" oninput="calculate()">
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Monthly Payment</div>
+                    <div class="result-hero-value" id="payment">$0</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="loanAmount">$0</div>
+                        <div class="result-label">Loan Amount</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="totalInterest">$0</div>
+                        <div class="result-label">Total Interest</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="totalCost">$0</div>
+                        <div class="result-label">Total Cost</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Cost Breakdown</h2>
+                <div class="breakdown-row"><span>Vehicle Price</span><span id="bPrice">$0</span></div>
+                <div class="breakdown-row"><span>Sales Tax</span><span id="bTax">$0</span></div>
+                <div class="breakdown-row"><span>Down Payment</span><span id="bDown">-$0</span></div>
+                <div class="breakdown-row"><span>Trade-In</span><span id="bTrade">-$0</span></div>
+                <div class="breakdown-row" style="font-weight: bold;"><span>Amount Financed</span><span id="bFinanced">$0</span></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="car-depreciation-calculator.html" class="related-link">📉 Car Depreciation</a>
+                    <a href="lease-vs-buy-calculator.html" class="related-link">🔄 Lease vs Buy</a>
+                    <a href="fuel-cost-calculator.html" class="related-link">⛽ Fuel Cost</a>
+                    <a href="loan-calculator.html" class="related-link">💵 Loan Calculator</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const price = parseFloat(document.getElementById('price').value) || 0;
+            const down = parseFloat(document.getElementById('down').value) || 0;
+            const tradeIn = parseFloat(document.getElementById('tradeIn').value) || 0;
+            const rate = parseFloat(document.getElementById('rate').value) / 100 / 12;
+            const term = parseInt(document.getElementById('term').value);
+            const taxRate = parseFloat(document.getElementById('tax').value) / 100;
+
+            const salesTax = price * taxRate;
+            const loanAmount = price + salesTax - down - tradeIn;
+
+            let payment;
+            if (rate === 0) {
+                payment = loanAmount / term;
+            } else {
+                payment = loanAmount * (rate * Math.pow(1 + rate, term)) / (Math.pow(1 + rate, term) - 1);
+            }
+
+            const totalPaid = payment * term;
+            const totalInterest = totalPaid - loanAmount;
+            const totalCost = price + salesTax + totalInterest;
+
+            document.getElementById('payment').textContent = '$' + payment.toFixed(2);
+            document.getElementById('loanAmount').textContent = '$' + loanAmount.toFixed(0);
+            document.getElementById('totalInterest').textContent = '$' + totalInterest.toFixed(0);
+            document.getElementById('totalCost').textContent = '$' + totalCost.toFixed(0);
+
+            document.getElementById('bPrice').textContent = '$' + price.toFixed(0);
+            document.getElementById('bTax').textContent = '$' + salesTax.toFixed(0);
+            document.getElementById('bDown').textContent = '-$' + down.toFixed(0);
+            document.getElementById('bTrade').textContent = '-$' + tradeIn.toFixed(0);
+            document.getElementById('bFinanced').textContent = '$' + loanAmount.toFixed(0);
+        }
+        calculate();
+    </script>
+</body>
+</html>

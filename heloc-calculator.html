@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELOC Calculator - Home Equity Line of Credit | MortgageCalcs</title>
+    <meta name="description" content="Free HELOC calculator. Calculate your home equity line of credit limit, monthly payments, and interest costs.">
+    <meta name="keywords" content="HELOC calculator, home equity line of credit, home equity loan, HELOC payment, equity calculator">
+    <link rel="canonical" href="https://mortgagecalcs.xyz/heloc-calculator.html">
+    <style>
+        :root { --primary: #0ea5e9; --primary-dark: #0284c7; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; }
+        .progress-container { margin: 20px 0; }
+        .progress-bar { height: 30px; background: var(--bg-dark); border-radius: 15px; overflow: hidden; position: relative; }
+        .progress-fill { height: 100%; border-radius: 15px; transition: width 0.3s; }
+        .progress-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: 600; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+    
+    <header class="header">
+        <h1>🏠 HELOC Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>🏡 Property Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Home Value ($)</label>
+                        <input type="number" id="homeValue" value="450000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Current Mortgage Balance ($)</label>
+                        <input type="number" id="mortgageBalance" value="250000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Max CLTV Ratio (%)</label>
+                        <input type="number" id="cltv" value="85" step="5" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>HELOC Interest Rate (%)</label>
+                        <input type="number" id="helocRate" value="8.5" step="0.1" oninput="calculate()">
+                    </div>
+                </div>
+                
+                <div class="result-hero">
+                    <div class="result-hero-label">Maximum HELOC Amount</div>
+                    <div class="result-hero-value" id="maxHeloc">$0</div>
+                </div>
+                
+                <div class="progress-container">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span>Home Equity Used</span>
+                        <span id="equityPct">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="background: linear-gradient(90deg, var(--success), var(--primary)); width: 0%;"></div>
+                    </div>
+                </div>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="totalEquity">$0</div>
+                        <div class="result-label">Total Home Equity</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="availableEquity">$0</div>
+                        <div class="result-label">Available Equity</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="maxBorrowing">$0</div>
+                        <div class="result-label">Max Borrowing (85% CLTV)</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="ltv">0%</div>
+                        <div class="result-label">Current LTV</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💰 HELOC Payment Scenarios</h2>
+                <div class="form-group">
+                    <label>HELOC Draw Amount ($)</label>
+                    <input type="number" id="drawAmount" value="50000" oninput="calculate()">
+                </div>
+                <div class="breakdown-row">
+                    <span>Interest-Only Payment (Draw Period)</span>
+                    <span id="interestOnly">$0/mo</span>
+                </div>
+                <div class="breakdown-row">
+                    <span>Principal + Interest (10-year repayment)</span>
+                    <span id="piPayment">$0/mo</span>
+                </div>
+                <div class="breakdown-row">
+                    <span>Total Interest (10-year term)</span>
+                    <span id="totalInterest">$0</span>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="home-equity-calculator.html" class="related-link">🏠 Home Equity</a>
+                    <a href="refinance-calculator.html" class="related-link">🔄 Refinance</a>
+                    <a href="mortgage-calculator.html" class="related-link">🏦 Mortgage</a>
+                    <a href="home-value-calculator.html" class="related-link">💰 Home Value</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const homeValue = parseFloat(document.getElementById('homeValue').value) || 0;
+            const mortgageBalance = parseFloat(document.getElementById('mortgageBalance').value) || 0;
+            const cltv = parseFloat(document.getElementById('cltv').value) / 100 || 0.85;
+            const helocRate = parseFloat(document.getElementById('helocRate').value) / 100 || 0;
+            const drawAmount = parseFloat(document.getElementById('drawAmount').value) || 0;
+            
+            const totalEquity = homeValue - mortgageBalance;
+            const maxBorrowing = homeValue * cltv;
+            const availableEquity = maxBorrowing - mortgageBalance;
+            const maxHeloc = Math.max(0, availableEquity);
+            const currentLtv = homeValue > 0 ? (mortgageBalance / homeValue) * 100 : 0;
+            const equityPct = homeValue > 0 ? ((mortgageBalance + Math.min(drawAmount, maxHeloc)) / homeValue) * 100 : 0;
+            
+            const monthlyRate = helocRate / 12;
+            const interestOnly = drawAmount * monthlyRate;
+            
+            const repaymentMonths = 120;
+            let piPayment;
+            if (monthlyRate > 0) {
+                piPayment = drawAmount * (monthlyRate * Math.pow(1 + monthlyRate, repaymentMonths)) / (Math.pow(1 + monthlyRate, repaymentMonths) - 1);
+            } else {
+                piPayment = drawAmount / repaymentMonths;
+            }
+            const totalInterest = (piPayment * repaymentMonths) - drawAmount;
+            
+            document.getElementById('maxHeloc').textContent = '$' + Math.round(maxHeloc).toLocaleString();
+            document.getElementById('totalEquity').textContent = '$' + Math.round(totalEquity).toLocaleString();
+            document.getElementById('availableEquity').textContent = '$' + Math.round(availableEquity).toLocaleString();
+            document.getElementById('maxBorrowing').textContent = '$' + Math.round(maxBorrowing).toLocaleString();
+            document.getElementById('ltv').textContent = currentLtv.toFixed(1) + '%';
+            document.getElementById('equityPct').textContent = Math.min(100, equityPct).toFixed(1) + '%';
+            document.getElementById('progressFill').style.width = Math.min(100, equityPct) + '%';
+            
+            document.getElementById('interestOnly').textContent = '$' + Math.round(interestOnly).toLocaleString() + '/mo';
+            document.getElementById('piPayment').textContent = '$' + Math.round(piPayment).toLocaleString() + '/mo';
+            document.getElementById('totalInterest').textContent = '$' + Math.round(totalInterest).toLocaleString();
+        }
+        
+        calculate();
+    </script>
+</body>
+</html>

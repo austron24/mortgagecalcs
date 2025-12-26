@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Loan Calculator - Calculate Land Purchase Payments | MortgageCalcs</title>
+    <meta name="description" content="Free land loan calculator. Calculate monthly payments for raw land, lot loans, and acreage purchases. Compare land financing options.">
+    <meta name="keywords" content="land loan calculator, lot loan, acreage financing, raw land loan, land purchase calculator">
+    <link rel="canonical" href="https://mortgagecalcs.xyz/land-loan-calculator.html">
+    <style>
+        :root { --primary: #84cc16; --primary-dark: #65a30d; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; color: #0f172a; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 4rem; font-weight: 800; color: #0f172a; }
+        .result-hero-label { color: rgba(0,0,0,0.7); font-size: 1.2rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .info-box { background: var(--bg-input); padding: 15px; border-radius: 10px; margin-top: 15px; border-left: 4px solid var(--primary); }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); color: #0f172a; }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🌲 Land Loan Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>🏞️ Land Purchase Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Land Price ($)</label>
+                        <input type="number" id="price" value="100000" step="5000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Down Payment (%)</label>
+                        <input type="number" id="downPct" value="20" min="0" max="100" step="5" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="rate" value="8.5" step="0.125" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Loan Term (years)</label>
+                        <select id="term" onchange="calculate()">
+                            <option value="5">5 years</option>
+                            <option value="10">10 years</option>
+                            <option value="15" selected>15 years</option>
+                            <option value="20">20 years</option>
+                            <option value="25">25 years</option>
+                            <option value="30">30 years</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Land Type</label>
+                        <select id="landType" onchange="adjustRate()">
+                            <option value="improved">Improved Lot</option>
+                            <option value="raw">Raw Land</option>
+                            <option value="farm">Farm/Agricultural</option>
+                            <option value="recreational">Recreational</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Acreage</label>
+                        <input type="number" id="acreage" value="5" step="1" oninput="calculate()">
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Monthly Payment</div>
+                    <div class="result-hero-value" id="payment">$0</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="downPayment">$0</div>
+                        <div class="result-label">Down Payment</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="loanAmount">$0</div>
+                        <div class="result-label">Loan Amount</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="pricePerAcre">$0</div>
+                        <div class="result-label">Price Per Acre</div>
+                    </div>
+                </div>
+
+                <div class="results-grid" style="margin-top: 15px;">
+                    <div class="result-card">
+                        <div class="result-value" id="totalInterest">$0</div>
+                        <div class="result-label">Total Interest</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="totalCost">$0</div>
+                        <div class="result-label">Total Cost</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="payoffDate">--</div>
+                        <div class="result-label">Payoff Date</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📖 Land Loan Information</h2>
+                <div class="info-box">
+                    <strong>Higher Rates:</strong> Land loans typically have higher interest rates (7-10%+) than mortgages because land is considered a riskier investment.
+                </div>
+                <div class="info-box" style="margin-top: 15px;">
+                    <strong>Larger Down Payments:</strong> Expect 20-50% down payment requirements for land loans, especially for raw land.
+                </div>
+                <div class="info-box" style="margin-top: 15px;">
+                    <strong>Shorter Terms:</strong> Land loans often have shorter terms (10-20 years) compared to traditional mortgages.
+                </div>
+                <div class="info-box" style="margin-top: 15px;">
+                    <strong>Loan Types:</strong><br>
+                    • <strong>Improved Lot:</strong> Land with utilities - easier financing<br>
+                    • <strong>Raw Land:</strong> No improvements - higher rates, larger down payment<br>
+                    • <strong>USDA Loans:</strong> May be available for farm/rural land
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="mortgage-calculator.html" class="related-link">🏠 Mortgage Calculator</a>
+                    <a href="home-affordability-calculator.html" class="related-link">💰 Affordability</a>
+                    <a href="property-tax-calculator.html" class="related-link">🏛️ Property Tax</a>
+                    <a href="investment-calculator.html" class="related-link">📈 Investment</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function adjustRate() {
+            const landType = document.getElementById('landType').value;
+            const rateInput = document.getElementById('rate');
+            
+            switch(landType) {
+                case 'improved': rateInput.value = 7.5; break;
+                case 'raw': rateInput.value = 9.0; break;
+                case 'farm': rateInput.value = 7.0; break;
+                case 'recreational': rateInput.value = 8.5; break;
+            }
+            calculate();
+        }
+
+        function calculate() {
+            const price = parseFloat(document.getElementById('price').value) || 0;
+            const downPct = parseFloat(document.getElementById('downPct').value) || 0;
+            const rate = parseFloat(document.getElementById('rate').value) || 0;
+            const term = parseInt(document.getElementById('term').value) || 15;
+            const acreage = parseFloat(document.getElementById('acreage').value) || 1;
+            
+            const downPayment = price * (downPct / 100);
+            const loanAmount = price - downPayment;
+            const monthlyRate = rate / 100 / 12;
+            const numPayments = term * 12;
+            
+            let payment = 0;
+            if (rate > 0) {
+                payment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+            } else {
+                payment = loanAmount / numPayments;
+            }
+            
+            const totalPaid = payment * numPayments;
+            const totalInterest = totalPaid - loanAmount;
+            const totalCost = price + totalInterest;
+            const pricePerAcre = price / acreage;
+            
+            const payoffDate = new Date();
+            payoffDate.setMonth(payoffDate.getMonth() + numPayments);
+            
+            document.getElementById('payment').textContent = '$' + Math.round(payment).toLocaleString();
+            document.getElementById('downPayment').textContent = '$' + Math.round(downPayment).toLocaleString();
+            document.getElementById('loanAmount').textContent = '$' + Math.round(loanAmount).toLocaleString();
+            document.getElementById('pricePerAcre').textContent = '$' + Math.round(pricePerAcre).toLocaleString();
+            document.getElementById('totalInterest').textContent = '$' + Math.round(totalInterest).toLocaleString();
+            document.getElementById('totalCost').textContent = '$' + Math.round(totalCost).toLocaleString();
+            document.getElementById('payoffDate').textContent = payoffDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        }
+        
+        calculate();
+    </script>
+</body>
+</html>
