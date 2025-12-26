@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Calculator - Calculate Loan Payments & Interest | MortgageCalcs</title>
-    <meta name="description" content="Free loan calculator. Calculate monthly payments, total interest, and amortization schedule for any loan type.">
-    <meta name="keywords" content="loan calculator, payment calculator, interest calculator, amortization, loan payments">
-    <link rel="canonical" href="https://mortgagecalcs.xyz/loan-calculator.html">
+    <meta name="description" content="Free loan calculator. Calculate monthly payments, total interest, and amortization schedule for any loan type. Free and instant results.">
+        <link rel="canonical" href="https://mortgagecalcs.xyz/loan-calculator.html">
     <meta property="og:title" content="Loan Calculator">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Loan Calculator | MortgageCalcs">
+    <meta name="twitter:description" content="Free loan calculator. Calculate monthly payments, total interest, and amortization schedule for any loan type. Free and instant results.">
     <meta property="og:description" content="Calculate your loan payments instantly. See monthly payments, total interest, and full amortization schedule.">
     <meta property="og:type" content="website">
     <style>
@@ -57,8 +59,81 @@
         @media (max-width: 640px) { .header h1 { font-size: 1.8rem; } .summary-grid { grid-template-columns: 1fr; } .payment-value { font-size: 2.5rem; } }
     </style>
     <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebApplication",
+            "name": "Loan Calculator",
+            "url": "https://mortgagecalcs.xyz/loan-calculator.html",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Any",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "provider": {
+                "@type": "Organization",
+                "name": "MortgageCalcs",
+                "url": "https://mortgagecalcs.xyz"
+            }
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [{
+            "@type": "Question",
+            "name": "How is monthly mortgage payment calculated?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Monthly mortgage payment is calculated using the loan principal, interest rate, and loan term. The formula uses amortization to determine how much goes toward principal vs interest each month."
+            }
+        },{
+            "@type": "Question",
+            "name": "What credit score do I need for a mortgage?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most conventional mortgages require a credit score of 620+. FHA loans may accept scores as low as 500-580 with higher down payments."
+            }
+        },{
+            "@type": "Question",
+            "name": "How much should I put down on a house?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A 20% down payment avoids PMI, but many loans accept 3-5% down. The more you put down, the lower your monthly payments."
+            }
+        }]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://mortgagecalcs.xyz/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Loan Calculator",
+                    "item": "https://mortgagecalcs.xyz/loan-calculator.html"
+                }
+            ]
+        }
+    ]
+}
+</script>
 </head>
 <body>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol style="display: flex; list-style: none; padding: 10px 20px; margin: 0; background: rgba(0,0,0,0.2); font-size: 0.9rem;">
+            <li><a href="/" style="color: var(--text-secondary); text-decoration: none;">Home</a></li>
+            <li style="margin: 0 8px; color: var(--text-secondary);">/</li>
+            <li style="color: var(--text-primary);">Loan Calculator</li>
+        </ol>
+    </nav>
     </div>
     </div>
     
@@ -67,6 +142,7 @@
         <p>Calculate your monthly payments, total interest, and see a full amortization schedule.</p>
     </header>
 
+    <main>
     <div class="main-container">
         <div class="content-area">
             <div class="card">
@@ -143,6 +219,24 @@
             </div>
 
             </div>
+
+            <div class="card" style="margin-top: 20px;">
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq-list" style="margin-top: 15px;">
+            <details style="margin-bottom: 15px; padding: 15px; background: var(--bg-input); border-radius: 8px;">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary);">How is monthly mortgage payment calculated?</summary>
+                <p style="margin-top: 10px; color: var(--text-secondary); line-height: 1.6;">Monthly mortgage payment is calculated using the loan principal, interest rate, and loan term. The formula uses amortization to determine how much goes toward principal vs interest each month.</p>
+            </details>
+            <details style="margin-bottom: 15px; padding: 15px; background: var(--bg-input); border-radius: 8px;">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary);">What credit score do I need for a mortgage?</summary>
+                <p style="margin-top: 10px; color: var(--text-secondary); line-height: 1.6;">Most conventional mortgages require a credit score of 620+. FHA loans may accept scores as low as 500-580 with higher down payments.</p>
+            </details>
+            <details style="margin-bottom: 15px; padding: 15px; background: var(--bg-input); border-radius: 8px;">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary);">How much should I put down on a house?</summary>
+                <p style="margin-top: 10px; color: var(--text-secondary); line-height: 1.6;">A 20% down payment avoids PMI, but many loans accept 3-5% down. The more you put down, the lower your monthly payments.</p>
+            </details>
+        </div>
+    </div>
 
             <div class="card">
                 <h2>🔗 Related Tools</h2>
