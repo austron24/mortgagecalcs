@@ -1,0 +1,11 @@
+# Robots.txt for mortgagecalcs.xyz
+# https://mortgagecalcs.xyz
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mortgagecalcs.xyz/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
